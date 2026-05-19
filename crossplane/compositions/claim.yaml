@@ -3,6 +3,8 @@ kind: ManagedNamespace
 metadata:
   name: my-lab-namespace
   namespace: default
+  annotations:
+    argocd.argoproj.io/sync-wave: "2"
 spec:
   namespaceName: lab-demo
   compositionRef:

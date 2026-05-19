@@ -4,6 +4,8 @@ metadata:
   name: managed-namespace
   labels:
     provider: kubernetes
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
 spec:
   compositeTypeRef:
     apiVersion: lab.example.com/v1alpha1

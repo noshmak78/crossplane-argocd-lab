@@ -2,6 +2,8 @@ apiVersion: apiextensions.crossplane.io/v1
 kind: CompositeResourceDefinition
 metadata:
   name: xmanagednamespaces.lab.example.com
+  annotations:
+    argocd.argoproj.io/sync-wave: "0"
 spec:
   group: lab.example.com
   names:
