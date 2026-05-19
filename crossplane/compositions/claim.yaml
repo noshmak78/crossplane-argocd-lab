@@ -1,0 +1,9 @@
+apiVersion: lab.example.com/v1alpha1
+kind: ManagedNamespace
+metadata:
+  name: my-lab-namespace
+  namespace: default
+spec:
+  namespaceName: lab-demo
+  compositionRef:
+    name: managed-namespace

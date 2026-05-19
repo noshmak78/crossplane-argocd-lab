@@ -1,0 +1,28 @@
+apiVersion: apiextensions.crossplane.io/v1
+kind: CompositeResourceDefinition
+metadata:
+  name: xmanagednamespaces.lab.example.com
+spec:
+  group: lab.example.com
+  names:
+    kind: XManagedNamespace
+    plural: xmanagednamespaces
+  claimNames:
+    kind: ManagedNamespace
+    plural: managednamespaces
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                namespaceName:
+                  type: string
+                  description: Name of the Kubernetes namespace to create
+              required:
+                - namespaceName
