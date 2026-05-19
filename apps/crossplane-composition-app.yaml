@@ -1,0 +1,18 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: crossplane-compositions
+  namespace: argocd
+spec:
+  project: default
+  source:
+    repoURL: https://github.com/noshmak78/crossplane-argocd-lab.git
+    targetRevision: main
+    path: crossplane/compositions
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: default
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
